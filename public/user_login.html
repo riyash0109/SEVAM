@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="login.css">
+<h2>SEVAM Health Diagnostic System Sign in/up Form</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="/usersubmit" method="post">
+			<h1>Create Account : </h1>
+			<!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div> -->
+			<span></span>
+			<input type="text" name="name" placeholder="Name" onkeypress="return isLetter(event)"  required />
+			<input type="email" name="email" placeholder="Email" required />
+			<input type="password" name="password" placeholder="Password" required />
+            <input type="radio" name="gender" id="Male" value="Male">
+			<label for="Male">Male</label>
+			<input type="radio" name="gender" id="Female" value="Female">
+			<label for="Female">Female</label>
+            <input type="number" name="age" placeholder="Age" max="115" min="0" onkeypress="return isNumberKey(event)" required/>
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="/user_login" method="post" >
+			<h1>Sign in</h1>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" id="email" name="email" required/>
+			<input type="password" placeholder="Password" id="password" name="password" required/>
+			<a href="forgot_password1.html">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start jouorney with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+function isNumberKey(evt) {
+		var charCode = (evt.which) ? evt.which : event.keyCode
+		if (charCode > 31 && (charCode < 48 || charCode > 57))
+			return false;
+
+		return true;
+	}
+	function isLetter(evt) {
+var charCode = (evt.which) ? evt.which : event.keyCode
+if ((charCode > 64 && charCode < 91) || (charCode < 123 && charCode > 96))
+  return true;
+
+return false;
+}
+</script>
+</script>
+<script src="..app.js"></script>

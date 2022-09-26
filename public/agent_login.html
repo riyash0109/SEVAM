@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="login.css">
+<h2>SEVAM Health Diagnostic System Sign in/up Form</h2>
+<div class="container" id="container">
+	<!-- <div class="form-container sign-up-container">
+		<form action="/agentsubmit" method="post">
+			<h1>Create Account : </h1> -->
+			<!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div> -->
+
+			<!-- <span></span>
+			<input type="text" placeholder="Name" name="name" />
+			<input type="email" placeholder="Email" name="email"/>
+			<input type = "password" placeholder="Password" name="password"/>
+            <input type="text" placeholder="Gender" name="gender"/>
+            <input type="number" placeholder="Experience" max="55" min="0" name="experience"/>
+            <input type="number" placeholder="Age" max="115" min="4" name="age"/>
+			<button>Sign Up</button>
+		</form> -->
+	<!-- </div> -->
+	<div class="form-container sign-in-container">
+		<form action="/agent_login" method="post">
+			<h1>Sign in</h1>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" name="email" required />
+			<input type="password" placeholder="Password" name="password" required/>
+			<a href="agent_fgpass1.html">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!!!</h1>
+				<p>Contact - sevam@gmail.com for registering yourself as an agent</p>
+				<button class="ghost" id="signIn">Sign UP</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Agent!!!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+function isNumberKey(evt) {
+		var charCode = (evt.which) ? evt.which : event.keyCode
+		if (charCode > 31 && (charCode < 48 || charCode > 57))
+			return false;
+
+		return true;
+	}
+	function isLetter(evt) {
+var charCode = (evt.which) ? evt.which : event.keyCode
+if ((charCode > 64 && charCode < 91) || (charCode < 123 && charCode > 96))
+  return true;
+
+return false;
+}
+</script>
+</script>
